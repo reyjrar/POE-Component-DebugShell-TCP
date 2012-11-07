@@ -6,6 +6,57 @@ POE::Component::DebugShell::TCP - DebugShell accessible via a TCP Port
 
 version 0.01
 
+# SYNOPSIS
+
+This POE Component provides a debugging port for your application to
+see the internal using the capabilities provided by POE::API::Peek.
+
+    use POE qw(
+        Component::DebugShell::TCP
+    );
+
+    # Message Dispatch Service
+    my $SESSION = POE::Component::DebugShell::TCP->spawn(
+            ListenAddress       => 'localhost',         #default
+            ListenPort          => 9094,              #default
+    );
+
+    POE::Kernel->run();
+
+# EXPORT
+
+POE::Component::Server::eris does not export any symbols.
+
+# FUNCTIONS
+
+## spawn
+
+Creates the POE::Session for the DebugShell.
+
+Parameters:
+    ListenAddress           => 'localhost',         \#default
+    ListenPort              => '9094',              \#default
+
+## INTERNAL FUNCTIONS
+
+### client\_connect
+
+Handles connection establishment
+
+### client\_input
+
+Handles client input
+
+### client\_term
+
+Handles client termination
+
+# SEE ALSO
+
+- [POE::API::Peek](http://search.cpan.org/dist/POE-API-Peek)
+- [POE::Component::DebugShell](http://search.cpan.org/dist/POE-Component-DebugShell)
+- [POE::Component::DebugShell::Jabber](http://search.cpan.org/dist/POE-Component-DebugShell-Jabber)
+
 # AUTHOR
 
 Brad Lhotsky <brad@divisionbyzero.net>

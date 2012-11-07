@@ -1,0 +1,3 @@
+Changelog for POE::Component::DebugShell::TCP
+0.01    2012-11-07 Brad Lhotsky <brad@divisionbyzero.net>
+        - Initial release, not compliant with PoCo::DebugShell interface

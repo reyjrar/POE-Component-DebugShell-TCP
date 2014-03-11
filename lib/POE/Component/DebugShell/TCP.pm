@@ -96,7 +96,7 @@ sub client_connect {
 
 =head3 client_input
 
-Handles client input
+Handles client input, responds to the "status" command
 
 =cut
 
